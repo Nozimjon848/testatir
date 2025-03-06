@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: #121212;
+        }
+
+        .navbar i {
+            font-size: 1.5rem;
+            color: rgb(42, 42, 42);
+            transition: transform 0.3s;
+        }
+
+        .navbar i:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            background: linear-gradient(rgb(55, 55, 55), rgb(12, 12, 12));
+            border: none;
+            border-radius: 20px;
+            height: 30vh;
+            position: relative;
+            left: .5vh;
+        }
+
+        .card img {
+            width: 120%;
+            border-radius: 5px;
+            object-fit: cover;
+            height: 120px;
+            position: relative;
+            left: -1.5vh;
+            padding: 0;
+        }
+
+        .card p {
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+            margin: 3px 0;
+        }
+
+        .card .price {
+            font-size: 11px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .rating {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px 12px;
+            border-radius: 10px;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .arrow-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            width: 5vh;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .arrow-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: #121212;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+        
+        .bottom-nav a:hover {
+            transform: scale(1.1);
+        }
+        
+
+        .bottom-nav i {
+            color: #6b6b6b;
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .carousel-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 15px; 
+            position: relative;
+            left: .5vh;
+        }
+
+        .carousel-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .carousel-caption {
+            bottom: 20px;
+        }
+
+        .carousel-caption h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .active i {
+            text-shadow: 0 0 .5vh rgba(255, 255, 255, 0.686);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark px-3 d-flex justify-content-between">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            AllureAroma
+        </a>
+        <i class="fa-solid fa-shopping-bag"></i>
+    </nav>
+
+    </head>
+
+    <body>
+        <h3 class="mt-4">Popular</h3>
+        <div class="row">
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                    <img src="1.png" class="card-img-top" alt="Canon EOS 30D">
+                    <p>CREED AVENTUS</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="2.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>BLACK AFGANO</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="3.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>LV imagination</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="4.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Bvlgari Tygar </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="5.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>GANYMADE</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="6.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>KIRKE</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="7.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Chanel de Blue</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="8.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Doir Sauvage</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="9.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Roja Flysium</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="10.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Molecula 020</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="11.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>My way</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="12.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Lacoste sport</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="13.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Killian Good Gril</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="14.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Gucci Flora G.G</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="15.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Ysl libre</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="16.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Byredo Bal Dafrique</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="17.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Escada Ocean Lounge</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="18.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="19.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Byredo Bal Dafrique</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="20.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Escada Ocean Lounge</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="21.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="22.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="23.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="24.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="25.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="26.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="27.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="28.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <p class="price">$6000</p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="29.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="30.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="31.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="32.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="33.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="34.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="35.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="36.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="38.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="39.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="40.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="41.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="42.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="43.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="44.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i
+                                class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card p-3 position-relative">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.2</span>
+                    <img src="45.png" class="card-img-top" alt="SONY 200MM Zoom">
+                    <p>Versace Pour Homme </p>
+                    <div class="arrow-btn"><a href="https://t.me/Allurearoma_uz"><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="index.html"><i class="fa-solid fa-home"></i></a>
+            <a href="#"><i class="fa-solid fa-search"></i></a>
+            <a href="#" class="active"><i class="fa-solid fa-bars-progress"></i></a>
+            <a href="your.html"><i class="fa-solid fa-map-location-dot"></i></a>
+        </div>
+    </body>
+
+</html>
